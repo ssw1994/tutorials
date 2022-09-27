@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Events from "./Events/Events";
+import { NewsList } from "./NewsList/NewsList";
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: true,
+    };
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  render() {
+    return (
+      <>
+        <fieldset>
+          <legend>Component Lifecycle</legend>
+          <button onClick={() => this.setState({ show: !this.state.show })}>
+            {this.state.show ? "HIDE" : "SHOW"}
+          </button>
+          {this.state.show && <NewsList show={this.state.show} />}
+        </fieldset>
+
+        <fieldset>
+          <legend>Events</legend>
+          <Events />
+        </fieldset>
+      </>
+    );
+  }
 }
-
-export default App;
