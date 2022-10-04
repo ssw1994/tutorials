@@ -1,5 +1,5 @@
 
-
+@import 'bootstrap/dist/css/bootstrap.min.css';
 .box{
     border:1px solid grey;
     width:33%;
@@ -17,4 +17,24 @@ display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap:15px;
+}
+
+.center-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-box form{
+    border:1px solid black;
+    border-radius: 15px;
+    box-shadow: 15px 15px 10px gray;
+}
+
+.center-box form > div{
+    margin:15px;
+}
+
+.center-box form > div > input{
+    margin:5px;
 }
