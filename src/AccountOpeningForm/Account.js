@@ -14,12 +14,12 @@ export class Account extends CustomerName {
   password = "";
   email = "";
   mobile = "";
-  accountType = "";
+  accountType = "current";
   gender = "";
   services = {
-    creditCard: true,
+    creditCard: false,
     debitCard: false,
-    passBook: false,
+    passBook: true,
     mobileBankinkg: false,
     smsBanking: false,
   };

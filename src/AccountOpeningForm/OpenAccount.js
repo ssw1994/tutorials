@@ -6,15 +6,10 @@ export default function OpenAccount() {
   const openAccount = (event) => {
     console.log("I'm opening account");
     event.preventDefault();
-
     console.log(accountForm);
-    //console.log(formData)
-    //api -> backend -> db
   };
 
   const updateForm = (event) => {
-    console.log(event);
-    //accountForm[event.target.id] = event.target.value;
     updateAccountForm({
       ...accountForm,
       [event.target.id]: event.target.value,
@@ -29,6 +24,10 @@ export default function OpenAccount() {
         [event.target.id]: !accountForm.services[event.target.id],
       },
     });
+  };
+
+  const uploadFile = (event) => {
+    console.log(event);
   };
 
   const mobileRegex = new RegExp("[0-9]{10}");
@@ -100,7 +99,9 @@ export default function OpenAccount() {
             placeholder="Type of account"
             id="accountType"
             onChange={updateForm}
+            value={accountForm.accountType}
           >
+            <option value="">None</option>
             <option value="saving">Saving</option>
             <option value="current">Current</option>
             <option value="fixed">Fixed</option>
@@ -184,15 +185,25 @@ export default function OpenAccount() {
         </div>
         <div>
           <label>Pan Card</label>
-          <input type="file" placeholder="Please update Pan" />
+          <input
+            type="file"
+            placeholder="Please update Pan"
+            onChange={uploadFile}
+          />
         </div>
         <div>
           <label>Adhar Card</label>
-          <input type="file" />
+          <input type="file" onChange={uploadFile} />
         </div>
         <div>
           <Button type="submit" variant="primary">
             Open
+          </Button>
+          <Button
+            type="button"
+            onClick={(e) => updateAccountForm(new Account())}
+          >
+            Reset
           </Button>
         </div>
       </form>

@@ -5,12 +5,15 @@ import { NewsList } from "./NewsList/NewsList";
 import ReactDOM from "react-dom";
 import "./App.css";
 import OpenAccount from "./AccountOpeningForm/OpenAccount";
+import LoginForm from "./LoginForm/LoginForm";
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       numbers: [],
       choice: null,
+      dummy: false,
+      name: "sachin",
     };
   }
 
@@ -27,7 +30,7 @@ export default class App extends Component {
   }
 
   filterF = this.filterFun.bind(this);
-
+  name = "sagar";
   render() {
     return (
       <>
@@ -90,7 +93,8 @@ export default class App extends Component {
 
         <fieldset>
           <legend>Forms</legend>
-          <OpenAccount />
+          {/* <OpenAccount /> */}
+          <LoginForm />
         </fieldset>
       </>
     );
