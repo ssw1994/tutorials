@@ -43,3 +43,11 @@ display: flex;
 .center-box form > div > input{
     margin:5px;
 }
+.error-input input{
+    border-color:red;
+}
+
+.error{
+    color:red;
+    font-size:12px;
+}

@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import "./App.css";
 import OpenAccount from "./AccountOpeningForm/OpenAccount";
 import LoginForm from "./LoginForm/LoginForm";
+import StudentRegistrations from "./StudentRegistration/StudentRegistration";
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -94,7 +95,8 @@ export default class App extends Component {
         <fieldset>
           <legend>Forms</legend>
           {/* <OpenAccount /> */}
-          <LoginForm />
+          {/* <LoginForm /> */}
+          <StudentRegistrations />
         </fieldset>
       </>
     );

@@ -1,0 +1,26 @@
+.student-form form{
+    width: 50%;
+}
+
+.student-name{
+    display: flex;
+}
+.student-name div{
+    width: 50%;
+}
+
+.student-name div input{
+    width: 85%;
+}
+
+.division{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.division label{
+    font-size:18px;
+    color:blue;
+    font-weight: bolder;
+    margin:0 15px;
+}

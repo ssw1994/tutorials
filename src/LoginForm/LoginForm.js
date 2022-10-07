@@ -20,22 +20,33 @@ export default function LoginForm() {
     password: "",
   });
 
+  const [isFormSubmiited, setSubmitted] = React.useState(false);
+
   const loginUser = (event) => {
     event.preventDefault();
     console.log(loginForm);
     //api ->
-
+    setSubmitted(true);
     const message = CheckCrendentials(loginForm);
     updateLoginMessage(message);
 
     console.log("I'm login user");
   };
 
+  const hasError = (key, pattern) => {
+    if (!isFormSubmiited) return false;
+    if (!loginForm[key]) return true;
+    if (!pattern) return false;
+    if (loginForm[key] && !loginForm[key].match(pattern)) return true;
+    return false;
+  };
+
   const username = (
-    <div>
+    <div className={hasError("username", "[a-z]+") && "error-input"}>
       <input
         placeholder="Username"
         required
+        pattern="[a-z]+"
         value={loginForm.username}
         onChange={(e) =>
           updateLoginForm((prev) => {
@@ -43,11 +54,19 @@ export default function LoginForm() {
           })
         }
       ></input>
+      {isFormSubmiited && (
+        <div className="error">
+          {loginForm.username && !loginForm.username.match("[a-z]+") && (
+            <span>Invalid username</span>
+          )}
+          {!loginForm.username && <span>Please enter username</span>}
+        </div>
+      )}
     </div>
   );
 
   const password = (
-    <div>
+    <div className={hasError("password") ? "error-input" : ""}>
       <input
         placeholder="Password"
         type={passwordType}
@@ -73,13 +92,13 @@ export default function LoginForm() {
   );
 
   const LoginButton = (
-    <div>
+    <div onClick={() => setSubmitted(true)}>
       <button type="submit">Login</button>
     </div>
   );
 
   return (
-    <div>
+    <div className="center-box">
       <form onSubmit={loginUser}>
         {username}
         {password}
