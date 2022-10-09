@@ -24,3 +24,51 @@
     font-weight: bolder;
     margin:0 15px;
 }
+
+/* .row{
+    border:1px solid blue;
+} */
+
+/* .row div:first-of-type{
+    background-color: yellow;
+} */
+
+/* .row div:last-of-type {
+    background-color: lightblue;
+} */
+
+/* .col{
+    border:1px solid red;
+} */
+
+.row{
+    margin:15px 0;
+}
+
+.row>*{
+        padding-left: 0 !important;
+}
+
+
+.MuiTextField-root{
+    width: 100%;
+}
+
+input[type="text"]{
+    width: 100%;
+}
+
+input[type="checkbox"],input[type="radio"]{
+    margin:0 10px;
+}
+
+.btn-container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-input{
+    border:2px solid red;
+    color:red;
+}
