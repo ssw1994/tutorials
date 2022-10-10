@@ -7,6 +7,7 @@ import "./App.css";
 import OpenAccount from "./AccountOpeningForm/OpenAccount";
 import LoginForm from "./LoginForm/LoginForm";
 import StudentRegistrations from "./StudentRegistration/StudentRegistration";
+import HooksDemo from "./HooksDemo/HooksDemo";
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -92,11 +93,16 @@ export default class App extends Component {
           )}
         </fieldset> */}
 
-        <fieldset>
+        {/* <fieldset>
           <legend>Forms</legend>
-          {/* <OpenAccount /> */}
-          {/* <LoginForm /> */}
+          <OpenAccount />
+          <LoginForm />
           <StudentRegistrations />
+        </fieldset> */}
+
+        <fieldset>
+          <legend>useMemo & useCallBack</legend>
+          <HooksDemo />
         </fieldset>
       </>
     );
