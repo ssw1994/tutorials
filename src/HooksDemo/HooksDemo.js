@@ -40,9 +40,12 @@ export default function HooksDemo() {
 
   const getResult = () => {
     console.log("Get Result Rendered");
+    // for (let i = 0; i < 1000000000; i++) {}
     return 10 + counter.count;
   };
   const result = React.useMemo(() => getResult(), [counter]);
+
+  //const result = getResult();
 
   //   const increment = () => {
   //     updateCounter((prev) => prev + 1);
