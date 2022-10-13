@@ -8,6 +8,7 @@ import OpenAccount from "./AccountOpeningForm/OpenAccount";
 import LoginForm from "./LoginForm/LoginForm";
 import StudentRegistrations from "./StudentRegistration/StudentRegistration";
 import HooksDemo from "./HooksDemo/HooksDemo";
+import CardWrapper from "./CartWrapper/CardWrapper";
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -100,9 +101,13 @@ export default class App extends Component {
           <StudentRegistrations />
         </fieldset> */}
 
-        <fieldset>
+        {/* <fieldset>
           <legend>useMemo & useCallBack</legend>
           <HooksDemo />
+        </fieldset> */}
+        <fieldset>
+          <legend>Shopping && Carts</legend>
+          <CardWrapper />
         </fieldset>
       </>
     );

@@ -1,18 +1,16 @@
 import React from "react";
+import { StoreActions } from "../CartWrapper/store/actions";
 
 function CheckCrendentials(payload) {
-  if (payload.username === "sachin") {
-    if (payload.password === "1234") {
-      return "Logged In successfully";
-    } else {
-      return "Invalid credentials";
-    }
+  //if (payload.username === "sachin") {
+  if (payload.password === "1234") {
+    return true;
   } else {
-    return "User not found";
+    throw new Error("Please enter correct password");
   }
 }
 
-export default function LoginForm() {
+export default function LoginForm({ dispatch }) {
   const [loginMessage, updateLoginMessage] = React.useState("");
   const [passwordType, setPasswordType] = React.useState("password");
   const [loginForm, updateLoginForm] = React.useState({
@@ -27,8 +25,13 @@ export default function LoginForm() {
     console.log(loginForm);
     //api ->
     setSubmitted(true);
-    const message = CheckCrendentials(loginForm);
-    updateLoginMessage(message);
+    try {
+      if (CheckCrendentials(loginForm)) {
+        dispatch({ type: StoreActions.LOGIN_USER, payload: loginForm });
+      }
+    } catch (error) {
+      updateLoginMessage(error.message);
+    }
 
     console.log("I'm login user");
   };
