@@ -10,6 +10,7 @@ import StudentRegistrations from "./StudentRegistration/StudentRegistration";
 import HooksDemo from "./HooksDemo/HooksDemo";
 import TodoList from "./HooksDemo/Redux/TodoList";
 import CardWrapper from "./CartWrapper/CardWrapper";
+import ListWrapper from "./ListWrapper/ListWrapper";
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -107,12 +108,13 @@ export default class App extends Component {
           <HooksDemo />
         </fieldset> */}
         {/* <fieldset>
-          <legend>useReducer</legend>
-          <TodoList />
-        </fieldset> */}
-        <fieldset>
           <legend>Shopping && Carts</legend>
           <CardWrapper />
+        </fieldset> */}
+
+        <fieldset>
+          <legend>Table & Searching</legend>
+          <ListWrapper />
         </fieldset>
       </>
     );
