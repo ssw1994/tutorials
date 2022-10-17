@@ -62,3 +62,7 @@ display: flex;
 .todo-item *{
     width: 30%;
 }
+.product-card{
+    padding:15px;
+    min-height: 300px;
+}
